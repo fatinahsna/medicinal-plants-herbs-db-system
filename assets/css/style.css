@@ -44,6 +44,67 @@ body{
 	       background-color: #265a47;
            }
 
-        a:hover {
+    a:hover {
 	       color:black;
            }
+	.page-alignment{
+			display:flex;
+			gap:20px;
+			padding:20px;
+			margin-top:20px;
+		    }
+			
+	.main-content{
+			flex:3;
+			background-color:#2e6f57BF;
+			padding:20px;
+			border-radius: 4px;
+		    }
+			
+	h2{
+			font-family:bebas neue;
+			font-size:350%;
+			color:#7a9f92;
+			font-style:italic;
+			margin-top:0px;
+		    }
+			
+	.cards-arrangement{
+			display:flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 50px;
+		    }
+			
+	.plant-pic{
+			width:220px;
+			height:160px;
+			object-fit:cover;
+			border-radius: 12px;
+		    }
+			
+	.plant-pic:hover{
+			transform:scale(1.1);
+			transition:0.3s;
+		    }
+			
+	.plant-title{
+			font-family:roboto;
+			font-size:150%;
+			color:#7bb790;
+			margin-top:10px;
+			margin-left:35px;
+		    }
+	.explore-button{
+			background-color:#244230;
+			color:#7a9f92;
+			padding:15px 35px;
+			border:none;
+			border-radius:30px;
+			font-size:18px;
+			font-weight:600;
+			float: right;
+			}
+	.explore-button:hover{
+			color:black;
+			}
