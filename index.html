@@ -7,14 +7,23 @@
 </head>
 <body>
 	<header class="header">
-	<div class="header-top">
-		<div class="logo-section">
-			<img src="assets/images/not_actual_logo.png" alt="PlantMedX Logo" class="logo">
-			<div class="title">
-				<h1>PlantMedX</h1>
-				<p>Nature's Remedy, At Your Fingertips</p> 
+		<div class="header-top">
+			<div class="logo-section">
+				<img src="assets/images/not_actual_logo.png" alt="PlantMedX Logo" class="logo">
+				<div class="title">
+					<h1>PlantMedX</h1>
+					<p>Nature's Remedy, At Your Fingertips</p>
+				</div>
 			</div>
-		</div>
+			<p class="navigation">
+				<a class="nav-design" href="index.html">Home</a>
+				<a class="nav-design" href="view.php">View Plant</a>
+				<a class="nav-design" href="add.php">Add Plant</a>
+				<a class="nav-design" href="edit.php">Edit Plant</a>
+				<a class="nav-design" href="delete.php">Delete Plant</a>
+				<input type="text" id="searchBox" placeholder="Search Plant">
+				<button onclick="searchPlant()">Search</button>
+			</p>
 		
 		<div class="header-right">
 			<button class="theme" id="themeToggle">
@@ -39,8 +48,27 @@
 					<i class="bi bi-filter"></i>
 				</a>
 			</div>
+	</div>
+</header>
+<main>
+	<div class="cards-arrangement">
+		<div>
+			<img class="plant-pic" src="assets/images/tumeric.jpg" alt="Tumeric"/>
+			<h3 class="plant-title">Tumeric</h3>
 		</div>
-	</header>
-	<script src="assets/js/script.js"></script>
+		<div>
+			<img class="plant-pic" src="assets/images/willow bark.jpg" alt="Willow Bark"/>
+			<h3 class="plant-title">Willow Bark</h3>
+		</div>
+		<div>
+			<img class="plant-pic" src="assets/images/chamomile.jpg" alt="Chamomile"/>
+			<h3 class="plant-title">Chamomile</h3>
+		</div>
+	</div>
+	<div>
+		<button class="explore-button">Explore More Plants</button>
+	</div>
+</main>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
