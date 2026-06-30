@@ -34,12 +34,173 @@
 				<a href="view_details.php" class="search-button">
 					<i class="bi bi-search"></i>
 				</a>
-				<a href="view.php" class="filter-button">
+				<button class="filter-button" id="filterBtn">
 					<i class="bi bi-filter"></i>
-				</a>
+				</button>
 			</div>
 	</div>
 </header>
+	<form class="filter-popup" id="filterPopup" action="view.php" method="GET">
+		<h2>Filter Plants</h2>
+		<div class="filter-top">
+			<button class="toggle-button" id="categoryBtn">
+				Category
+			</button>
+			<button class="toggle-button" id="originBtn">
+				Origin
+			</button>
+		</div>
+		<div class="filter-content">
+			<div class="filter-section" id="categorySection">
+				<h3>Category</h3>
+				<label><input type="checkbox" name="category[]" value="Digestive Health"> Digestive Health</label>
+				<label><input type="checkbox" name="category[]" value="Respiratory Health"> Respiratory Health</label>
+				<label><input type="checkbox" name="category[]" value="Skin Care"> Skin Care</label>
+				<label><input type="checkbox" name="category[]" value="Pain Relief"> Pain Relief</label>
+				<label><input type="checkbox" name="category[]" value="Immune Support"> Immune Support</label>
+			</div>
+			<div class="filter-section" id="originSection">
+				<h3>Origin</h3>
+				<label><input type="checkbox" name="origin[]" value="Asia"> Asia</label>
+				<label><input type="checkbox" name="origin[]" value="Europe"> Europe</label>
+				<label><input type="checkbox" name="origin[]" value="Africa"> Africa</label>
+				<label><input type="checkbox" name="origin[]" value="North America"> North America</label>
+				<label><input type="checkbox" name="origin[]" value="South America"> South America</label>
+			</div>
+		</div>
+		<div class="popup-buttons">
+			<button type="button" class="reset-button" id="resetBtn">
+				Reset
+			</button>
+			<button type="button" class="apply-button" id="applyBtn">
+				Apply
+			</button>
+		</div>
+	</form>
+	<section class="featured-plants">
+    <div class="section-header">
+        <h2>Featured Medicinal Plants</h2>
+        <p>Discover the power of nature's healing.</p>
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-btn prev" id="prevBtn">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+	<div class="carousel" id="carousel">
+    <div class="plant-card">
+        <img src="assets/images/ginger.jpg" class="plant-image">
+        <div class="overlay">
+            <h2>Ginger</h2>
+            <p class="scientific">Zingiber officinale</p>
+            <p class="description">
+                Helps reduce nausea, improves digestion and relieves inflammation.
+            </p>
+            <div class="tags">
+                <span>Digestive Health</span>
+                <span>Asia</span>
+            </div>
+            <a href="view_details.php" class="details-btn">
+                View Details
+            </a>
+        </div>
+    </div>
+    <div class="plant-card">
+        <img src="assets/images/aloe_vera.jpg" class="plant-image">
+        <div class="overlay">
+            <h2>Aloe Vera</h2>
+            <p class="scientific">Aloe barbadensis</p>
+            <p class="description">
+                Known for treating burns, wounds and maintaining healthy skin.
+            </p>
+            <div class="tags">
+                <span>Skin Care</span>
+                <span>Africa</span>
+            </div>
+            <a href="view_details.php" class="details-btn">
+                View Details
+            </a>
+        </div>
+    </div>
+    <div class="plant-card">
+        <img src="assets/images/chamomile.jpg" class="plant-image">
+        <div class="overlay">
+            <h2>Chamomile</h2>
+            <p class="scientific">Matricaria chamomilla</p>
+            <p class="description">
+                Helps reduce anxiety, improve sleep and relax the body.
+            </p>
+            <div class="tags">
+                <span>Relaxation</span>
+                <span>Europe</span>
+            </div>
+            <a href="view_details.php" class="details-btn">
+                View Details
+            </a>
+        </div>
+    </div>
+    <div class="plant-card">
+        <img src="assets/images/peppermint.jpg" class="plant-image">
+        <div class="overlay">
+            <h2>Peppermint</h2>
+            <p class="scientific">Mentha piperita</p>
+            <p class="description">
+                Relieves headaches, nausea and supports healthy digestion.
+            </p>
+            <div class="tags">
+                <span>Digestive Health</span>
+                <span>Europe</span>
+            </div>
+            <a href="view_details.php" class="details-btn">
+                View Details
+            </a>
+        </div>
+    </div>
+    <div class="plant-card">
+        <img src="assets/images/turmeric.jpg" class="plant-image">
+        <div class="overlay">
+            <h2>Turmeric</h2>
+            <p class="scientific">Curcuma longa</p>
+            <p class="description">
+                Rich in antioxidants and commonly used to reduce inflammation.
+            </p>
+            <div class="tags">
+                <span>Anti-inflammatory</span>
+                <span>Asia</span>
+            </div>
+            <a href="view_details.php" class="details-btn">
+                View Details
+            </a>
+        </div>
+    </div>
+    <div class="plant-card">
+        <img src="assets/images/lavender.jpg" class="plant-image">
+        <div class="overlay">
+            <h2>Lavender</h2>
+            <p class="scientific">Lavandula angustifolia</p>
+            <p class="description">
+                Used to relieve stress, anxiety and improve sleep quality.
+            </p>
+            <div class="tags">
+                <span>Relaxation</span>
+                <span>Mediterranean</span>
+            </div>
+            <a href="view_details.php" class="details-btn">
+                View Details
+            </a>
+        </div>
+    </div>
+</div>
+		<button class="carousel-btn next" id="nextBtn">
+			<i class="bi bi-chevron-right"></i>
+		</button>
+	</div> <!-- carousel-container -->
+
+<div class="explore-more">
+    <a href="view.php" class="explore-btn">
+        Explore More Plants
+    </a>
+</div>
+</section>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
