@@ -65,15 +65,29 @@ body[data-theme="dark"]{
     background-image: url("../images/green_bg_dark.png");
 }
 .header{
-	position:sticky;
-	padding:15px 40px 55px;
-	background-image:url("../images/header_light.jpg");
-	background-size:cover;
-	background-position:center;
-	box-shadow: 0 2px 15px rgba(0,0,0,0.50);
+    position:relative;
+    padding:15px 30px 30px;
+    background-image:url("../images/header_light.jpg");
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 2px 15px rgba(0,0,0,.5);
+    overflow:visible;
 }
-body[data-theme="dark"] .header{
-    background-image: url("../images/header_dark.png");
+.header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(10,35,18,.70) 0%,
+        rgba(20,55,30,.45) 45%,
+        rgba(20,55,30,.20) 100%
+    );
+    z-index:1;
+    pointer-events:none;
+}
+body[data-theme="dark"] .header::before{
+    background:rgba(0,0,0,.35);
 }
 .logo-section{
 	display:flex;
@@ -89,12 +103,12 @@ body[data-theme="dark"] .header{
 	margin:0;
 	font: "DM Serif Display";
 	font-size:40px;
-	color:var(--clr-forest);
+	color:var(--clr-sage);
 	font-weight:700;
 }
 .title p{
 	margin-top:3px;
-	color:var(--clr-text);
+	color:white;
 	font:"poppins";
 	font-size:20px;
 }
@@ -107,6 +121,8 @@ body[data-theme="dark"] .header{
 	display:flex;
 	justify-content:space-between;
 	align-items:flex-start;
+	position:relative;
+    z-index:2;
 }
 .theme{
 	width:45px;
@@ -135,25 +151,30 @@ body[data-theme="dark"] .header{
 .header-intro{
 	text-align:left;
 	margin-top:-35px;
+	position:relative;
+    z-index:2;
 }
 .header-intro h2{
 	font-size:34px;
+	color: var(--clr-sage);
 	margin-bottom:8px;
 }
 .header-intro p{
 	width:560px;
+	color:white;
 	font-size:17px;
 	margin:0;
 	line-height:1.5;
 }
 .search-wrapper{
-	position:absolute;
-	left:50%;
-	bottom:-35px;
-	width:100%;
-	display:flex;
-	justify-content:center;
-	transform:translateX(-50%);
+    position:absolute;
+    left:50%;
+    bottom:-25px;
+    transform:translateX(-50%);
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:5;
 }
 .search-container{
 	display:flex;
@@ -299,6 +320,7 @@ body[data-theme="dark"] .header{
     width:100%;
     height:100%;
     position:relative;
+    overflow:visible;
 }
 .plant-card{
     position:absolute;
@@ -435,4 +457,17 @@ body[data-theme="dark"] .header{
 .hide-card{
     opacity:0;
     pointer-events:none;
+}
+.footer{
+    background:var(--clr-navbar-bg);
+    color:var(--clr-navbar-text);
+    text-align:center;
+    padding:18px 0;
+    margin-top:70px;
+    font-size:15px;
+    letter-spacing:.5px;
+    border-top:1px solid rgba(255,255,255,.15);
+}
+.footer p{
+    margin:0;
 }
