@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,23 +26,11 @@
 				<i class="bi bi-moon-fill" id="icon"></i>
 			</button>
 			
-			<a href="login.php" class="login-button">Admin Login</a>
+<?php if (isset($_SESSION['admin'])) { ?>
+		<a href="logout.php" class="login-button">Logout</a>
+<?php } else { ?>
+		<a href="login.php" class="login-button">Admin Login</a>
+<?php } ?>
 		</div>
-	</div>
-		<div class="header-intro">
-			<h2>Welcome to PlantMedX!</h2>
-			<p>Your trusted guide to medicinal plants and natural remedies.Browse our database to 
-				explore herbs, their benefits, and their traditional uses. </p>
-		</div>
-		<div class="search-wrapper">
-			<div class="search-container">
-				<input type="text" class="search-bar" placeholder="Search Plants...">
-				<a href="view_details.php" class="search-button">
-					<i class="bi bi-search"></i>
-				</a>
-				<button class="filter-button" id="filterBtn">
-					<i class="bi bi-filter"></i>
-				</button>
-			</div>
 	</div>
 </header>
