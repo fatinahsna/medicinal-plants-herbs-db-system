@@ -458,7 +458,6 @@ body[data-theme="dark"] .header::before{
     opacity:0;
     pointer-events:none;
 }
-<<<<<<< HEAD
 .footer{
     width:100%;
     background:var(--clr-navbar-bg);
@@ -475,7 +474,7 @@ body[data-theme="dark"] .header::before{
     font-weight:500;
     letter-spacing:.3px;
 }
-=======
+
 
 
 /* ============================================================
