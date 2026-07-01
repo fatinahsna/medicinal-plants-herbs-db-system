@@ -436,3 +436,301 @@ body[data-theme="dark"] .header{
     opacity:0;
     pointer-events:none;
 }
+
+
+/* ============================================================
+   ADMIN PAGES (Add Plant, etc.)
+   Reuses the color variables defined at the top of this file
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+.admin-body {
+    background-image: none;
+    background-color: var(--clr-page-bg);
+    min-height: 100vh;
+}
+
+/* ---- Top bar ---- */
+.admin-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: var(--clr-card);
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.admin-logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-logo-box img {
+    display: block;
+    object-fit: contain;
+}
+
+.admin-logo-box h1 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--clr-forest);
+}
+
+.admin-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-border);
+    background: var(--clr-card);
+    color: var(--clr-forest);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon-btn:hover {
+    background: var(--clr-sage-light);
+}
+
+/* ---- Page container ---- */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 40px 60px;
+}
+
+.admin-page-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.back-link {
+    font-size: 26px;
+    color: var(--clr-text);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--clr-forest);
+}
+
+.admin-page-title h1 {
+    margin: 0;
+    font-size: 34px;
+    color: var(--clr-text);
+}
+
+/* ---- Alerts ---- */
+.alert {
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    font-size: 15px;
+}
+
+.alert-success {
+    background: var(--clr-sage-light);
+    color: var(--clr-forest);
+    border: 1px solid var(--clr-sage);
+}
+
+.alert-error {
+    background: var(--clr-danger-bg);
+    color: var(--clr-danger);
+    border: 1px solid var(--clr-danger);
+}
+
+/* ---- Form grid ---- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ---- Panels ---- */
+.panel {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 18px;
+    padding: 24px 26px;
+}
+
+.panel h3 {
+    margin: 0 0 18px;
+    font-size: 19px;
+    color: var(--clr-text);
+}
+
+/* ---- Form fields ---- */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--clr-muted);
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--clr-border);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--clr-card);
+    color: var(--clr-text);
+    outline: none;
+    transition: border-color .2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--clr-forest-mid);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.divider-col {
+    border-left: 1px solid var(--clr-border);
+    padding-left: 18px;
+}
+
+/* ---- Image upload ---- */
+.upload-box {
+    border: 2px dashed var(--clr-border);
+    border-radius: 14px;
+    padding: 28px;
+    text-align: center;
+    position: relative;
+    background: var(--clr-page-bg);
+}
+
+.upload-box input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--clr-forest);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.file-list {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--clr-muted);
+    text-align: left;
+}
+
+/* ---- Buttons row ---- */
+.button-row {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.btn {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    transition: .3s;
+}
+
+.btn-cancel {
+    background: var(--clr-card);
+    color: var(--clr-text);
+    border: 2px solid var(--clr-border);
+}
+
+.btn-cancel:hover {
+    background: var(--clr-danger-bg);
+    border-color: var(--clr-danger);
+    color: var(--clr-danger);
+}
+
+.btn-submit {
+    background: var(--clr-forest);
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background: var(--clr-forest-mid);
+}
+
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+    .divider-col {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--clr-border);
+        padding-top: 14px;
+    }
+}
