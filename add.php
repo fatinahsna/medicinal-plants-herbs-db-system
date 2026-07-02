@@ -143,6 +143,8 @@ if ($cat_result) {
     }
 }
 ?>
+<!-- <?php include 'includes/header.php'; ?> -->
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -159,7 +161,7 @@ if ($cat_result) {
         </div>
         <div class="admin-topbar-right">
             <button type="button" class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
-            <a href="index.php" class="icon-btn" title="Home">🏠</a>
+            <a href="index.html" class="icon-btn" title="Home">🏠</a>
         </div>
     </div>
 
@@ -333,3 +335,4 @@ if ($cat_result) {
 
 </body>
 </html>
+<?php include 'includes/footer.php'; ?>
