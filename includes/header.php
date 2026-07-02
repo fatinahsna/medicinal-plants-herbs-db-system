@@ -18,7 +18,6 @@ if (session_status() === PHP_SESSION_NONE) {
 				<img src="assets/images/logo.png" alt="PlantMedX Logo" class="logo">
 				<div class="title">
 					<h1>PlantMedX</h1>
-					<p>Nature's Remedy, At Your Fingertips</p>
 				</div>
 			</div>
 		<div class="header-right">

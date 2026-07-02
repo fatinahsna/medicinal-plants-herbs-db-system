@@ -143,7 +143,7 @@ if ($cat_result) {
     }
 }
 ?>
-<!-- <?php include 'includes/header.php'; ?> -->
+<?php include 'includes/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -155,7 +155,7 @@ if ($cat_result) {
 <body class="admin-body" data-theme="light">
 
     <!-- Top bar -->
-    <div class="admin-topbar">
+    <!-- <div class="admin-topbar">
         <div class="admin-logo-box">
             <img src="assets/images/logo.png" alt="PlantMedX Logo" width="50"> <h1>PlantMedX</h1>
         </div>
@@ -163,12 +163,12 @@ if ($cat_result) {
             <button type="button" class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
             <a href="index.html" class="icon-btn" title="Home">🏠</a>
         </div>
-    </div>
+    </div> -->
 
     <div class="admin-container">
 
         <div class="admin-page-title">
-            <a href="plants.php" class="back-link">&larr;</a>
+            <a href="view.php" class="back-link">&larr;</a>
             <h1>Add New Plant</h1>
         </div>
 
