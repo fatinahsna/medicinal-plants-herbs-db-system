@@ -146,12 +146,14 @@ include 'includes/header.php';
             </div>
         </div>
     </form>
-
+    
+    <?php if (isset($_SESSION['admin'])): ?>
     <div class="view-actions">
         <a href="add.php" class="add-plant-btn">
             <i class="bi bi-plus-lg"></i> Add Plant
         </a>
     </div>
+    <?php endif; ?>
 
     <p class="results-count"><?php echo count($plants); ?> plant<?php echo count($plants) === 1 ? '' : 's'; ?> found</p>
 

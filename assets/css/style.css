@@ -819,7 +819,7 @@ body[data-theme="dark"] .header::before{
         padding-top: 14px;
     }
 }
->>>>>>> 9e1d89eccb82740d7edd431cba0b5d1cd346d61e
+>>>>>>> 9e1d89eccb82740d7edd431cba0b5d1cd346d61e 
 
 /* ---- Login.php ---- */
 .login-container{
@@ -985,4 +985,298 @@ body[data-theme="dark"] .header::before{
     padding:70px 20px;
     color:var(--clr-muted);
     font-size:17px;
+}
+
+/* ============================================================
+   VIEW PLANT (DETAIL) PAGE — view_details.php
+   ============================================================ */
+
+.detail-topbar{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    max-width:1300px;
+    margin:30px auto 0;
+    padding:0 40px;
+}
+.back-arrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--clr-card);
+    color:var(--clr-forest);
+    font-size:20px;
+    text-decoration:none;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    transition:.3s;
+    flex-shrink:0;
+}
+.back-arrow:hover{
+    background:var(--clr-forest);
+    color:#fff;
+}
+.detail-title h1{
+    font-size:30px;
+    color:var(--clr-forest);
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.plant-id-badge{
+    font-size:13px;
+    font-weight:600;
+    color:var(--clr-muted);
+    background:var(--clr-sage-light);
+    padding:4px 12px;
+    border-radius:12px;
+}
+.scientific-subtitle{
+    font-style:italic;
+    color:var(--clr-muted);
+    margin-top:4px;
+    font-size:15px;
+}
+
+.detail-layout{
+    max-width:1300px;
+    margin:0 auto;
+    padding:26px 40px 60px;
+    display:grid;
+    grid-template-columns:3fr 5fr;
+    gap:40px;
+    align-items:start;
+}
+@media (max-width:900px){
+    .detail-layout{ grid-template-columns:1fr; }
+}
+
+.detail-image-col{
+    position:sticky;
+    top:20px;
+}
+.detail-image-box{
+    width:100%;
+    aspect-ratio:9 / 10;
+    border-radius:22px;
+    overflow:hidden;
+    background:var(--clr-sage-light);
+    box-shadow:0 10px 26px rgba(0,0,0,.15);
+}
+.detail-image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.detail-thumbs{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+.detail-thumb{
+    width:64px;
+    height:64px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    opacity:.6;
+    border:2px solid transparent;
+    transition:.25s;
+}
+.detail-thumb:hover{
+    opacity:.9;
+}
+.detail-thumb.active{
+    opacity:1;
+    border-color:var(--clr-forest);
+}
+
+.detail-info-col{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+.info-card{
+    background:var(--clr-card);
+    border-radius:18px;
+    padding:24px 28px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+.info-card h3{
+    font-size:17px;
+    color:var(--clr-forest);
+    margin-bottom:16px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--clr-border, rgba(0,0,0,.08));
+}
+.info-card-grid{
+    display:grid;
+    grid-template-columns:1fr 1px 1fr;
+    gap:24px;
+}
+@media (max-width:560px){
+    .info-card-grid{ grid-template-columns:1fr; }
+    .info-divider{ display:none; }
+}
+.info-divider{
+    background:var(--clr-border, rgba(0,0,0,.1));
+}
+.info-fields{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+.info-field{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+.info-label{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--clr-muted);
+}
+.info-value{
+    font-size:15px;
+    color:var(--clr-text);
+    line-height:1.5;
+}
+.info-value-long{
+    line-height:1.6;
+}
+
+.detail-actions{
+    display:flex;
+    gap:16px;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+}
+.edit-plant-btn,
+.delete-plant-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 26px;
+    border-radius:25px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
+}
+.edit-plant-btn{
+    background:var(--clr-forest);
+    color:#fff;
+}
+.edit-plant-btn:hover{
+    background:var(--clr-forest-mid);
+}
+.delete-plant-btn{
+    background:#fff0f0;
+    color:#c0392b;
+    border:1px solid #f2c6c2;
+}
+.delete-plant-btn:hover{
+    background:#c0392b;
+    color:#fff;
+    border-color:#c0392b;
+}
+
+.detail-not-found{
+    max-width:600px;
+    margin:80px auto;
+    text-align:center;
+    color:var(--clr-muted);
+    padding:0 20px;
+}
+.detail-not-found i{
+    font-size:48px;
+    color:var(--clr-sage-light);
+    margin-bottom:16px;
+    display:inline-block;
+}
+.detail-not-found h2{
+    color:var(--clr-forest);
+    margin-bottom:8px;
+}
+.detail-not-found p{
+    margin-bottom:24px;
+}
+
+/* ============================================================
+   DELETE CONFIRMATION MODAL — delete.php
+   ============================================================ */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:20px;
+}
+.modal-box{
+    background:var(--clr-card);
+    border-radius:20px;
+    padding:34px 36px;
+    max-width:400px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+}
+.modal-box p{
+    font-size:17px;
+    color:var(--clr-text);
+    margin:0 0 26px;
+    line-height:1.5;
+}
+.modal-actions{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+}
+.modal-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 24px;
+    border-radius:25px;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    border:none;
+    text-decoration:none;
+    transition:.3s;
+}
+.modal-btn-cancel{
+    background:var(--clr-card);
+    color:var(--clr-text);
+    border:2px solid var(--clr-border);
+}
+.modal-btn-cancel:hover{
+    background:var(--clr-page-bg);
+}
+.modal-btn-delete{
+    background:var(--clr-danger);
+    color:#fff;
+}
+.modal-btn-delete:hover{
+    background:#96271b;
+}
+
+.detail-layout.is-blurred{
+    filter:blur(2px);
+    pointer-events:none;
+    user-select:none;
 }
