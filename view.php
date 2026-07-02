@@ -92,6 +92,20 @@ mysqli_stmt_close($stmt);
 include 'includes/header.php';
 ?>
 
+<?php if (!empty($_SESSION['success_message'])): ?>
+    <div class="alert alert-success">
+        <?= $_SESSION['success_message']; ?>
+    </div>
+    <?php unset($_SESSION['success_message']); ?>
+<?php endif; ?>
+
+<?php if (!empty($_SESSION['error_message'])): ?>
+    <div class="alert alert-error">
+        <?= htmlspecialchars($_SESSION['error_message']); ?>
+    </div>
+    <?php unset($_SESSION['error_message']); ?>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

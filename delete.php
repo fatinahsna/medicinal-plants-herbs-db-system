@@ -44,18 +44,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_delete'])) {
         $delStmt = mysqli_prepare($conn, "DELETE FROM plants WHERE plant_id = ?");
         mysqli_stmt_bind_param($delStmt, 'i', $post_id);
         mysqli_stmt_execute($delStmt);
+
+        $deleted = mysqli_affected_rows($conn);   // Check whether deletion succeeded
+
         mysqli_stmt_close($delStmt);
 
-        // Clean up the actual image files on disk
-        foreach ($filesToRemove as $path) {
-            $fullPath = __DIR__ . '/' . $path;
-            if (is_file($fullPath)) {
-                @unlink($fullPath);
+        // Remove image files only if the plant was deleted
+        if ($deleted > 0) {
+            foreach ($filesToRemove as $path) {
+                $fullPath = __DIR__ . '/' . $path;
+                if (is_file($fullPath)) {
+                    @unlink($fullPath);
+                }
             }
+
+            $_SESSION['success_message'] = '"' . htmlspecialchars($plant_name) . '" was deleted successfully.';
+        } else {
+            $_SESSION['error_message'] = 'Something went wrong while deleting the plant.';
         }
+
+        header('Location: view.php');
+        exit;           
     }
 
-    $safeName = htmlspecialchars($plant_name, ENT_QUOTES);
+    /*$safeName = htmlspecialchars($plant_name, ENT_QUOTES);
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -75,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_delete'])) {
     </body>
     </html>
     <?php
-    exit;
+    exit;*/
 }
 
 /* ------------------------------------------------------------

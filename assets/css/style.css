@@ -581,18 +581,21 @@ body[data-theme="dark"] .header::before{
     border-radius: 12px;
     margin-bottom: 22px;
     font-size: 15px;
+    font-weight: bold;
 }
 
 .alert-success {
     background: var(--clr-sage-light);
     color: var(--clr-forest);
     border: 1px solid var(--clr-sage);
+    font-weight: bold;
 }
 
 .alert-error {
     background: var(--clr-danger-bg);
     color: var(--clr-danger);
     border: 1px solid var(--clr-danger);
+    font-weight: bold;
 }
 
 /* ---- Form grid ---- */
